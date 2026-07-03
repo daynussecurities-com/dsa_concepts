@@ -10,7 +10,13 @@ class LinkedList:
         self.tail = new_node
         self.length = 1
 
+    def print_list(self):
+        temp_value = self.head
+
+        while temp_value is not None:
+            print(temp_value.value)
+            temp_value = temp_value.next
+
 my_list = LinkedList(5)
-print(my_list.head.value)
-print(my_list.tail.value)
-print(type(my_list))
+
+my_list.print_list()
