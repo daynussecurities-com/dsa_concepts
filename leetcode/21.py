@@ -13,6 +13,24 @@ class Solution:
         if not list2:
             return None
 
+        dummy = ListNode()
+        current = dummy
+
+        while list1 and list2:
+            if list1.val < list2.val:
+                current.next = list1
+                list1 = list1.next
+            else:
+                current.next = list2
+                list2 = list2.next
+
+            current.next = list1 or list2
+            current = current.next
+            
+
+        return dummy.next
+    
+
 
 
 
@@ -23,3 +41,4 @@ l1.next.next = ListNode(3)
 l2 = ListNode(5)
 l2.next = ListNode(6)
 l2.next.next = ListNode(4)
+l2.next.next.next = ListNode(7)
